@@ -1,0 +1,239 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  gravity 98
+  basicTimeStep 10
+  FPS 30
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.44731768231259167 0.8279285319327736 0.3382916450374342 1.4803875223781737
+  position 0.7186669164856834 0.7200921914745998 0.26857423664570607
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+DEF robot Robot {
+  translation 4.3596e-05 0.13 -5.39866e-11
+  rotation -4.796411191243282e-06 1.2093257745805391e-07 -0.9999999999884901 0.0004707986511206568
+  children [
+    InertialUnit {
+    }
+    Accelerometer {
+    }
+    DEF body Solid {
+      children [
+        DEF body Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.26 0.26 0.26
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject USE body
+      physics Physics {
+      }
+    }
+    DEF RF Transform {
+      translation 0.1301 0 0.1
+      rotation 0 0 1 -1.57
+      children [
+        DEF RF0Shape Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Cylinder {
+            height 0.01
+            radius 0.01
+          }
+        }
+        DEF RF0 HingeJoint {
+          jointParameters HingeJointParameters {
+            position -1.6139266072113463e-07
+            axis 0 1 0
+          }
+          device [
+            DEF RF0 PositionSensor {
+              name "RF0 sensor"
+            }
+            RotationalMotor {
+              name "RF0"
+            }
+          ]
+          endPoint DEF RF0 Solid {
+            translation 1.5729700000001307e-05 0 2.538658135345496e-12
+            rotation 7.736827818302467e-08 -0.2842225941876202 -0.9587583204088782 5.646734035461092e-07
+            children [
+              DEF half_L0 Transform {
+                translation 0 0.015 0
+                children [
+                  DEF L0 Shape {
+                    appearance Appearance {
+                      material Material {
+                      }
+                    }
+                    geometry Box {
+                      size 0.01 0.03 0.01
+                    }
+                  }
+                  DEF L0 Transform {
+                    translation 0 0.015 0
+                    rotation 0 0 1 1.57
+                    children [
+                      DEF RF1Shape Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Cylinder {
+                          height 0.01
+                          radius 0.01
+                        }
+                      }
+                      DEF RF1 HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position -1.0662498779211016e-07
+                          axis 0 1 0
+                        }
+                        device [
+                          DEF RF1 PositionSensor {
+                            name "RF1 sensor"
+                          }
+                          RotationalMotor {
+                            name "RF1"
+                          }
+                        ]
+                        endPoint Solid {
+                          rotation 0 -0.9999999999999999 0 1.0745380149674385e-07
+                          children [
+                            DEF half_L1 Transform {
+                              translation 0 0 0.035
+                              children [
+                                DEF L1 Transform {
+                                  translation 0 0 0.035
+                                  children [
+                                    DEF RF2Shape Shape {
+                                      appearance Appearance {
+                                        material Material {
+                                        }
+                                      }
+                                      geometry Cylinder {
+                                        height 0.01
+                                        radius 0.01
+                                      }
+                                    }
+                                    DEF RF2 HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        position 8.60201419139215e-08
+                                        axis 0 1 0
+                                      }
+                                      device [
+                                        DEF RF2 PositionSensor {
+                                          name "RF2 sensor"
+                                        }
+                                        RotationalMotor {
+                                          name "RF2"
+                                        }
+                                      ]
+                                      endPoint DEF RFL2 Solid {
+                                        translation 6.862390259203463e-10 1.754742239012952e-08 6.526919806469581e-07
+                                        rotation -0.017522543557106997 0.022135013581534007 0.9996014213880624 4.254849084133829e-06
+                                        children [
+                                          DEF half_L2 Transform {
+                                            translation 0.025 0 0
+                                            children [
+                                              DEF L2Shape Shape {
+                                                appearance Appearance {
+                                                  material Material {
+                                                  }
+                                                }
+                                                geometry Box {
+                                                  size 0.05 0.01 0.01
+                                                }
+                                              }
+                                              DEF L2 Transform {
+                                                translation 0.025 0 0
+                                                children [
+                                                  DEF half_L3 Transform {
+                                                    translation 0 -0.012 0
+                                                    rotation 1 0 0 4.692820414042842e-06
+                                                    children [
+                                                      DEF RFL3 Solid {
+                                                        children [
+                                                          DEF RF TouchSensor {
+                                                            children [
+                                                              DEF RFL3_shape Shape {
+                                                                appearance Appearance {
+                                                                  material Material {
+                                                                  }
+                                                                }
+                                                                geometry Box {
+                                                                  size 0.01 0.024 0.01
+                                                                }
+                                                              }
+                                                            ]
+                                                            name "RF touch sensor"
+                                                            boundingObject USE RFL3_shape
+                                                          }
+                                                        ]
+                                                        boundingObject USE RFL3_shape
+                                                        physics Physics {
+                                                          density 10000
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                        boundingObject USE RF2Shape
+                                        physics Physics {
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                                DEF L1 Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                    }
+                                  }
+                                  geometry Box {
+                                    size 0.01 0.01 0.07
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                          boundingObject USE RF1Shape
+                          physics Physics {
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+            boundingObject USE RF0Shape
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject Box {
+    size 0.01 0.01 0.01
+  }
+  physics Physics {
+  }
+  controller "pyController"
+}
